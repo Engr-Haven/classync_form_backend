@@ -30,7 +30,8 @@ exports.submitData = async (req, res) => {
     const normalizedEmail = email.trim().toLowerCase();
 
     // email validation and check >>>
-    const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    const emailPattern =
+      /^[A-Za-z][A-Za-z0-9._%+-]*@[A-Za-z][A-Za-z0-9-]*(?:\.[A-Za-z][A-Za-z0-9-]*)+$/;
 
     if (
       typeof normalizedEmail !== "string" ||
@@ -63,7 +64,8 @@ exports.submitData = async (req, res) => {
     });
 
     res.status(201).json({
-      message: "Thank you for registering",
+      message:
+        "You are the most serious student i have seen. Thank you for registering",
       newUser,
     });
   } catch (error) {
