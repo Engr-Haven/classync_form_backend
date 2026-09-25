@@ -31,7 +31,9 @@ app.get("/class-sync", (req, res) => {
   });
 });
 
-app.listen(process.env.PORT, () => {
+const myPORT = process.env.PORT || 5000;
+
+app.listen(myPORT, "0.0.0.0", () => {
   console.log(
     `Class Sync server is running on http://localhost:${process.env.PORT}`,
   );
